@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CriptoApp - Cesar & Atbash</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>CriptoBros</h2>
+        
+        <label>Conjunto de caracteres (Alfabeto):</label>
+        <input type="text" id="charset" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ">
+
+        <div class="mode-selector">
+            <button id="btnEncrypt" class="active" onclick="setMode('encrypt')">Cifrar</button>
+            <button id="btnDecrypt" onclick="setMode('decrypt')">Descifrar</button>
+        </div>
+
+        <textarea id="inputText" placeholder="Escribe aquí..." oninput="process()"></textarea>
+
+        <div class="controls">
+            <select id="method" onchange="updateUI()">
+                <option value="cesar">César</option>
+                <option value="atbash">Atbash</option>
+            </select>
+            <input type="number" id="shift" placeholder="Offset" value="3" oninput="process()">
+        </div>
+
+        <h3>Resultado:</h3>
+        <div id="result" class="result-box"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
